@@ -4,9 +4,11 @@ import com.example.Springkotlindemo.domain.Employee
 import com.example.Springkotlindemo.dto.AddEmployeeRequest
 import com.example.Springkotlindemo.dto.EmployeeResponse
 import org.springframework.context.annotation.Bean
+import org.springframework.stereotype.Component
 
+@Component
 class AddEmployeeRequestTransformer: Transformer<AddEmployeeRequest, Employee> {
-    @Bean
+
     override fun transform(source: AddEmployeeRequest): Employee {
         return Employee(
                 name = source.name,

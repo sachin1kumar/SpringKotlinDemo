@@ -20,7 +20,6 @@ class EmployeeManagementServiceImpl(private val employeeDao: EmployeeDao,
 
     override fun findAll(): List<EmployeeResponse> = this.employeeDao.findAll().map(Employee::toEmployeeResponse)
 
-    @Bean
     override fun save(addEmployeeRequest: AddEmployeeRequest): EmployeeResponse {
         return this.saveOrUpdate(addEmployeeRequestTransformer.transform(addEmployeeRequest))
     }
